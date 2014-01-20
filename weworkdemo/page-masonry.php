@@ -6,16 +6,16 @@ Template Name: WeWork Masonry Template Page
 get_header(); ?>
 
 <?php
-	$terms = get_terms("tagweworkdemo");
-	$count = count($terms);
+	$terms = get_terms( 'tagweworkdemo' );
+	$count = count( $terms );
 	echo '<ul id="demo-filter">';
 	echo '<li><a href="#all" title="">All</a></li>';
 		if ( $count > 0 )
 		{	
 			foreach ( $terms as $term ) {
-				$termname = strtolower($term->name);
-				$termname = str_replace(' ', '-', $termname);
-				echo '<li><a href="#" title="" rel="'.$termname.'" data-filter=".' . $termname .'">'.$term->name.'</a></li>';
+				$termname = strtolower( $term->name );
+				$termname = str_replace( ' ', '-', $termname );
+				echo '<li><a href="#" title="" rel="'. $termname .'" data-filter=".' . $termname .'">' . $term->name. '</a></li>';
 			}
 		}
 	echo "</ul>";
@@ -79,7 +79,6 @@ get_header(); ?>
 	var $container = jQuery('#demo-list');
 	// initialize isotope
 	$container.isotope({
-	  // options...
 	});
 	
 	// filter items when filter link is clicked
